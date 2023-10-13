@@ -5,7 +5,6 @@ public class Challenge5 {
         Scanner scan = new Scanner(System.in);
 
         boolean inPlay = true;
-        String answer;
         String computerInput;
         int AI;
 
@@ -24,10 +23,36 @@ public class Challenge5 {
             else{
                 computerInput = "scissors";
             }
+            System.out.println(computerInput);
 
             // Determining a winner
-            if ((userInput == "rock") && (computerInput == "scissors"){
+            if ((userInput.equals("rock")) && (computerInput.equals("scissors"))){
                 System.out.println("You Win!");
+            }
+            else if ((userInput.equals("scissors")) && (computerInput.equals("paper"))){
+                System.out.println("You Win!");
+            }
+            else if ((userInput.equals("paper")) && (computerInput.equals("rock"))) {
+                System.out.println("You Win!");
+            }
+            else if (userInput.equals(computerInput)){
+                System.out.println("The game is a draw");
+            }
+            else{
+                System.out.println("You lose.");
+            }
+
+            System.out.println("Would you like to play again? (y or n): ");
+            String answer = scan.nextLine().toLowerCase();
+
+            if (answer.equals("y")){
+                continue;
+            }
+            else if (answer.equals("n")){
+                break;
+            }
+            else {
+                System.out.println("ERROR: Did not recognize response.");
             }
         }
     }
